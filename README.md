@@ -1,4 +1,4 @@
-#环境配置
+环境配置
 
 ubuntu：18.04
 
@@ -75,7 +75,7 @@ pip install pycuda 安装python版本的cuda
 定位到用户根目录
 
 tar -xzvf opencv-3.4.2.zip 以备推理调用
-#RepVGG模型训练以及转换onnx
+RepVGG模型训练以及转换onnx
 
 定位到用户根目录
 
@@ -106,7 +106,7 @@ vim export_onnx.py
 设置arch，weights_file（convert.py生成的模型），output_file（输出模型名称），img_size（图片输入大小），batch_size（推理的batch）
 
 python export_onnx.py得到onnx模型
-#onnx模型转换为 int8 tensorrt引擎
+onnx模型转换为 int8 tensorrt引擎
 
 cd RepVGG_TensorRT_int8/repvgg_tensorrt_int8_tools
 
@@ -123,7 +123,7 @@ CALIB_IMG_DIR 量化图片路径(把训练的图片放到一个文件夹下，�
 onnx_model_path onnx模型路径（上面运行export_onnx.py得到的onnx模型）
 
 python convert_trt_quant.py 量化后的模型存到models_save目录下
-#tensorrt模型推理
+tensorrt模型推理
 
 cd RepVGG_TensorRT_int8/repvgg_tensorrt_int8
 
@@ -143,9 +143,9 @@ pip install netron 安装netron
 
 vim netron_repvgg.py 把如下内容粘贴
 
-    import netron
+import netron
 
-    netron.start('此处填充简化后的onnx模型路径', port=3344)
+netron.start('此处填充简化后的onnx模型路径', port=3344)
 
 python netron_repvgg.py 即可查看 模型输出名
 
@@ -168,3 +168,9 @@ cmake ..
 make
 
 ./RepVGGsEngine 输出平均推理时间，实测平均推理时间小于1ms一帧，不得不说，RepVGG真的很香！至此，部署完成！
+
+由于我训练的是猫狗识别下面放一张猫狗同框的图片结尾
+
+顺便放一下我的数据集链接
+
+链接: https://pan.baidu.com/s/1Mh6GxTLoXRTCRQh-TPUc3Q 密码: 3dt3
