@@ -1,4 +1,4 @@
-环境配置
+#环境配置
 
 ubuntu：18.04
 
@@ -75,7 +75,7 @@ pip install pycuda 安装python版本的cuda
 定位到用户根目录
 
 tar -xzvf opencv-3.4.2.zip 以备推理调用
-RepVGG模型训练以及转换onnx
+#RepVGG模型训练以及转换onnx
 
 定位到用户根目录
 
@@ -106,7 +106,7 @@ vim export_onnx.py
 设置arch，weights_file（convert.py生成的模型），output_file（输出模型名称），img_size（图片输入大小），batch_size（推理的batch）
 
 python export_onnx.py得到onnx模型
-onnx模型转换为 int8 tensorrt引擎
+#onnx模型转换为 int8 tensorrt引擎
 
 cd RepVGG_TensorRT_int8/repvgg_tensorrt_int8_tools
 
@@ -123,7 +123,7 @@ CALIB_IMG_DIR 量化图片路径(把训练的图片放到一个文件夹下，�
 onnx_model_path onnx模型路径（上面运行export_onnx.py得到的onnx模型）
 
 python convert_trt_quant.py 量化后的模型存到models_save目录下
-tensorrt模型推理
+#tensorrt模型推理
 
 cd RepVGG_TensorRT_int8/repvgg_tensorrt_int8
 
